@@ -1,0 +1,26 @@
+{
+  "name": "gatsby-theme-reactor",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Troy Henne <troy@hashinteractive.com>",
+  "license": "MIT",
+  "scripts": {
+    "build": "gatsby build",
+    "clean": "gatsby clean",
+    "develop": "gatsby develop"
+  },
+  "peerDependencies": {
+    "gatsby": "^2.19.22",
+    "react": "^16.13.0",
+    "react-dom": "^16.13.0"
+  },
+  "devDependencies": {
+    "gatsby": "^2.19.22",
+    "react": "^16.13.0",
+    "react-dom": "^16.13.0"
+  },
+  "dependencies": {
+    "gatsby-source-filesystem": "^2.1.48",
+    "gatsby-transformer-json": "^2.2.26"
+  }
+}

@@ -1,0 +1,23 @@
+[
+  {
+    "name": "Hash Interactive",
+    "url": "https://hashinteractive.com",
+    "technologies": ["Nuxt.js", "Bootstrap CSS", "GSAP"],
+    "start": "2018-10-15",
+    "end": "2020-01-15"
+  },
+  {
+    "name": "Flourish Wellness",
+    "url": "https://flourish.eco",
+    "technologies": ["Nuxt.js", "Firebase", "Bulma CSS"],
+    "start": "2018-10-15",
+    "end": "2020-01-15"
+  },
+  {
+    "name": "Rustic Co.",
+    "url": "https://rustic.co",
+    "technologies": ["Nuxt.js", "Strapi.io", "Tailwind CSS"],
+    "start": "2018-10-15",
+    "end": "2020-01-15"
+  }
+]
