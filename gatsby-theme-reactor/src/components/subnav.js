@@ -1,19 +1,28 @@
 /** @jsx jsx */
 import { jsx, Styled, Container, Flex, Box } from 'theme-ui'
 import { useStaticQuery, graphql } from 'gatsby'
+import Github from '../assets/github.svg'
+import LinkedIn from '../assets/Linkedin.svg'
+
+const icons = {
+  github: Github,
+  linkedin: LinkedIn
+}
 
 const Subnav = () => {
-  const { site: { siteMetadata: { social = {} } }} = useStaticQuery(graphql`
+  const { site: { siteMetadata: { social }}} = useStaticQuery(graphql`
     query {
       site {
         siteMetadata {
           title
+          social {
+            name
+            url
+          }
         }
       }
     }
   `)
-  console.log(social)
-  const connect = Object.keys(social).map((key) => ({ name: key, url: social[key] }))
   return (
     <Container
       p={3}>
@@ -59,6 +68,7 @@ const Subnav = () => {
                   color: theme => theme.colors.gray[6],
                   fontSize: 0 
                 }}>
+                <span sx={{ bg: theme => theme.colors.gray[3], mx: 4, width: 12, height: 1, display: 'inline-block', verticalAlign: 'middle' }}></span>
                 <span sx={{ verticalAlign: 'middle' }}>Connect With Me</span>
                 <span sx={{ bg: theme => theme.colors.gray[3], mx: 4, width: 12, height: 1, display: 'inline-block', verticalAlign: 'middle' }}></span>
               </Styled.h6>
@@ -68,9 +78,30 @@ const Subnav = () => {
                 width: 'full'
               }}>
               {
-                connect.length && (
-                  <Flex as='ul'>
-                    { connect.map((name, url) => <li key={name}>{name}</li>) }
+                social.length && (
+                  <Flex 
+                    sx={{
+                      listStyle: 'none',
+                      justifyContent: 'flex-end'
+                    }}
+                    as='ul'>
+                    { social.map(({ name, url }) => {
+                      const TagName = icons[name.toLowerCase()]
+                      return ( 
+                        <li 
+                          sx={{
+                            mx: 1
+                          }}
+                          key={name}><TagName sx={{ 
+                            width: 10,
+                            border: 1,
+                            boxShadow: 'lg',
+                            borderStyle: 'solid',
+                            borderColor: 'light',
+                            path: { fill: theme => theme.colors.gray[4] }
+                          }} /></li>
+                      )}
+                    )}
                   </Flex>
                 )
               }

@@ -3,11 +3,16 @@ module.exports = ({ dataPath = 'src/data' }) => ({
     title: `Reactor Theme`,
     siteUrl: `https://github.com/hashinteractive/gatsby-theme-reactor`,
     description: `Blazing fast modern site generator for React`,
-    social: [{
-       'Github': 'https://github.com',
-    }, {
-       'LinkedIn': 'https://linkedin.com' ,
-    }] 
+    social: [
+      {
+        name: 'Github',
+        url: 'https://github.com',
+      },
+      {
+        name: 'LinkedIn',
+        url: 'https://linkedin.com',
+      }
+    ] 
   },
   plugins: [
     {
@@ -29,6 +34,14 @@ module.exports = ({ dataPath = 'src/data' }) => ({
       options: {
         google: {
           families: ['Titillium', 'Droid Serif']
+        }
+      }
+    },
+    {
+      resolve: "gatsby-plugin-react-svg",
+      options: {
+        rule: {
+          include: /src\/assets/ 
         }
       }
     },

@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx, Styled, Container, Flex, Box } from 'theme-ui'
+import { jsx, Container } from 'theme-ui'
 import Layout from '../components/layout'
 import Subnav from '../components/subnav'
 
