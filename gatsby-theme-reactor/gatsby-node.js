@@ -2,56 +2,86 @@ const fs = require('fs')
 const path = require('path')
 
 // Make sure the data directory exists
-exports.onPreBootstrap = ({ reporter }) => {
-  const contentPath = "src/data"
+exports.onPreBootstrap = ({ reporter }, options) => {
+  const dataPath = options.dataPath || "src/data"
 
-  if (!fs.existsSync(contentPath)) {
-    reporter.info(`creating the ${contentPath} directory`)
-    fs.mkdirSync(contentPath, { recursive: true })
+  if (!fs.existsSync(dataPath)) {
+    reporter.info(`creating the ${dataPath} directory`)
+    fs.mkdirSync(dataPath, { recursive: true })
   }
 }
 
-exports.onCreateNode = ({ node, actions }) => {
-  const { createNodeField } = actions
-  if (node.internal.type === `ProjectsJson`) {
-    const { name = ''} = node
-    const slug = name 
+// Define the "Project" type
+exports.sourceNodes = ({ actions }) => {
+  actions.createTypes(`
+    type Project implements Node @dontInfer {
+      id: ID!
+      name: String!
+      technologies: [String!]!
+      start: Date! @dateformat
+      end: Date! @dateformat
+      url: String!
+      slug: String!
+    }
+  `)
+}
+
+exports.createResolvers = ({ createResolvers }) => {
+  const basePath = "project"
+  // Quick-and-dirty helper to convert strings into URL-friendly slugs.
+  const slugify = str => {
+    const slug = str
       .toLowerCase()
       .replace(/[^a-z0-9]+/g, "-")
       .replace(/(^-|-$)+/g, "")
-
-    createNodeField({
-      node,
-      name: `slug`,
-      value: slug,
-    })
+    return `/${basePath}/${slug}`.replace(/\/\/+/g, "/")
   }
+  createResolvers({
+    Project: {
+      slug: {
+        resolve: source => slugify(source.name),
+      },
+    },
+  })
 }
 
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
-  const result = await graphql(`
+  const projectPages = await graphql(`
     query {
-      allProjectsJson {
+      allProject {
         edges {
           node {
-            fields {
-              slug
-            }
+            id
+            slug
           }
         }
       }
     }
   `)
-  result.data.allProjectsJson.edges.forEach(({ node }) => {
+  const indexPage = await graphql(`
+    query {
+      sitePage(path: {eq: "/"}) {
+        id
+      }
+    }
+  `)
+  projectPages.data.allProject.edges.forEach(({ node }) => {
     createPage({
-      path: node.fields.slug,
-      component: path.resolve(`./src/templates/project.js`),
+      path: node.slug,
+      component: require.resolve(`./src/templates/project.js`),
       context: {
         // Data passed to context is available
         // in page queries as GraphQL variables.
-        slug: node.fields.slug,
+        projectID: node.id
       },
     })
   })
+  // create a sitepage if it doesn't exist
+  if(!indexPage.data.sitePage){
+    createPage({
+      path: "/",
+      component: require.resolve(`./src/templates/default.js`)
+    })
+  }
 }

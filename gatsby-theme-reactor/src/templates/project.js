@@ -1,13 +1,15 @@
 import React from "react"
-export default ({ data: { projectsJson: project = {} } }) => {
+import { graphql } from 'gatsby'
+
+export default ({ data: { project = {} } }) => {
   return (
     <div>{ JSON.stringify(project, null, 2) }</div>
   )
 }
 
 export const query = graphql`
-  query ($slug: String!) {
-    projectsJson(fields: {slug: {eq: $slug}}) {
+  query ($projectID: String!) {
+    project(id: { eq: $projectID }) {
       name
       technologies
       url
