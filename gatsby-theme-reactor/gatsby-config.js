@@ -3,6 +3,7 @@ module.exports = ({ dataPath = 'src/data' }) => ({
     title: `Reactor Theme`,
     siteUrl: `https://github.com/hashinteractive/gatsby-theme-reactor`,
     description: `Blazing fast modern site generator for React`,
+    greeting: `Hello, I'm Tom Allen`,
     social: [
       {
         name: 'Github',
@@ -11,6 +12,18 @@ module.exports = ({ dataPath = 'src/data' }) => ({
       {
         name: 'LinkedIn',
         url: 'https://linkedin.com',
+      },
+      {
+        name: 'Twitter',
+        url: 'https://twitter.com',
+      },
+      {
+        name: 'Medium',
+        url: 'https://medium.com',
+      },
+      {
+        name: 'StackOverflow',
+        url: 'https://stackoverflow.com',
       }
     ] 
   },
@@ -26,7 +39,7 @@ module.exports = ({ dataPath = 'src/data' }) => ({
     {
       resolve: `gatsby-transformer-json`,
       options: {
-        typeName: 'Project' 
+        typeName: ({ node }) => node.name 
       },
     },
     {

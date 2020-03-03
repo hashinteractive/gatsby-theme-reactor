@@ -23,6 +23,20 @@ exports.sourceNodes = ({ actions }) => {
       url: String!
       slug: String!
     }
+
+    type Social {
+      name: String!
+      url: String!
+    }
+
+    type Bio implements Node @dontInfer {
+      id: ID!
+      name: String!
+      greeting: String!
+      title: String!
+      description: String!
+      social: [Social]
+    }
   `)
 }
 
@@ -59,9 +73,10 @@ exports.createPages = async ({ graphql, actions }) => {
       }
     }
   `)
+  //check if there is index.js in /src/pages folder
   const indexPage = await graphql(`
     query {
-      sitePage(path: {eq: "/"}) {
+      sitePage(path: {eq: "/"}, component: {eq: "${__dirname}/src/pages/index.js"}) {
         id
       }
     }
@@ -77,7 +92,7 @@ exports.createPages = async ({ graphql, actions }) => {
       },
     })
   })
-  // create a sitepage if it doesn't exist
+  // create a sitepage at index if it doesn't exist
   if(!indexPage.data.sitePage){
     createPage({
       path: "/",
