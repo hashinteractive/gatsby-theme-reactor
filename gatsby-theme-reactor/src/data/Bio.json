@@ -24,5 +24,8 @@
       "name": "StackOverflow",
       "url": "https://stackoverflow.com"
     }
+  ],
+  "skills": [
+    "vue.js", "react.js", "tailwind css", "theme-ui", "gatsby.js", "nuxt.js", "graphQL", "javascript", "koa.js", "strapi.io", "firebase", "mongo", "postgres", "adobe illustrator", "adobe photoshop", "adobe xd"
   ] 
 }
