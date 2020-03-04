@@ -22,6 +22,7 @@ exports.sourceNodes = ({ actions }) => {
       end: Date! @dateformat
       url: String!
       slug: String!
+      description: String!
     }
 
     type Social {

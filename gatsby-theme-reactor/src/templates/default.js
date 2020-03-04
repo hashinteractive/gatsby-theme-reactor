@@ -35,6 +35,7 @@ const Default = () => {
             flexDirection: 'column'
           }}>
           <Flex
+            id="about"
             sx={{
               flexWrap: 'wrap'
             }}>
@@ -136,6 +137,7 @@ const Default = () => {
           </Flex>
           <Separator /> 
           <Flex
+            id="skills"
             sx={{
               flexWrap: 'wrap'
             }}>
@@ -213,13 +215,13 @@ const Default = () => {
                   fontSize: '85px',
                   textAlign: 'right',
                   lineHeight: 1.15,
-                  textShadow: '3px 3px 0 #dddddd'
+                  textShadow: '3px 3px 0 lightblue'
                 }}>
                 <u
                  sx={{
                    textDecoration: 'none', 
                    border: 0,
-                   borderBottom: 4,
+                   borderBottom: 6,
                    borderStyle: 'solid',
                    borderColor: theme => theme.colors.orange[3],
                  }}
@@ -230,6 +232,7 @@ const Default = () => {
           </Flex>
           <Separator />
           <Flex
+            id="portfolio"
             sx={{
               flexDirection: 'column',
               mb: 5
@@ -237,7 +240,7 @@ const Default = () => {
             <Box
               sx={{
                 width: 'full',
-                mb: 4
+                mb: 5
               }}>
               <Styled.h6
                 sx={{

@@ -4,20 +4,31 @@
     "url": "https://hashinteractive.com",
     "technologies": ["Nuxt.js", "Bootstrap CSS", "GSAP"],
     "start": "2018-10-15",
-    "end": "2020-01-15"
+    "end": "2020-01-15",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
   },
   {
     "name": "Flourish Wellness",
     "url": "https://flourish.eco",
     "technologies": ["Nuxt.js", "Firebase", "Bulma CSS"],
     "start": "2018-10-15",
-    "end": "2020-01-15"
+    "end": "2020-01-15",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
   },
   {
     "name": "Rustic Co.",
     "url": "https://rustic.co",
     "technologies": ["Nuxt.js", "Strapi.io", "Tailwind CSS"],
     "start": "2018-10-15",
-    "end": "2020-01-15"
+    "end": "2020-01-15",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+  },
+  {
+    "name": "Reactor Theme",
+    "url": "https://github.com/hashinteractive/gatsby-theme-reactor",
+    "technologies": ["Gatsby", "GraphQL", "Theme UI"],
+    "start": "2018-10-15",
+    "end": "2020-01-15",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
   }
 ]

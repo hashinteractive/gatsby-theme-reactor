@@ -116,10 +116,11 @@ const Subnav = () => {
                               width: 10,
                               border: 1,
                               p: 1,
-                              borderStyle: 'solid',
-                              borderColor: 'muted',
                               borderRadius: 3,
-                              path: { fill: theme => theme.colors.blue[3] },
+                              bg: theme => theme.colors.gray[3],
+                              path: { 
+                                fill: theme => theme.colors.white
+                              },
                               '&:hover': {
                                 boxShadow: 'lg',
                                 bg: theme => theme.colors.blue[3],

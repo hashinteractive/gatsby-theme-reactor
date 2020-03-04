@@ -81,7 +81,7 @@ const Header = (props) => {
                     fontWeight: 'extrabold',
                     textDecoration: 'none'
                   }}
-                  to="/#"
+                  to="/#about"
                   replace>About</Link>
               </li>
               <li sx={{ p: 2 }}>
@@ -93,8 +93,8 @@ const Header = (props) => {
                     fontWeight: 'extrabold',
                     textDecoration: 'none'
                   }}
-                  to="/#"
-                  replace>Bio</Link>
+                  to="/#skills"
+                  replace>Skills</Link>
               </li>
               <li sx={{ p: 2 }}>
                 <Link
@@ -105,8 +105,8 @@ const Header = (props) => {
                     fontWeight: 'extrabold',
                     textDecoration: 'none'
                   }}
-                  to="/#"
-                  replace>Contact</Link>
+                  to="/#portfolio"
+                  replace>Portfolio</Link>
               </li>
             </Flex>
           </Box>
