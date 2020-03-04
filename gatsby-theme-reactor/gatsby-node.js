@@ -22,6 +22,7 @@ exports.sourceNodes = ({ actions }) => {
       end: Date! @dateformat
       url: String!
       slug: String!
+      image: File
       description: String!
     }
 
@@ -52,11 +53,32 @@ exports.createResolvers = ({ createResolvers }) => {
       .replace(/(^-|-$)+/g, "")
     return `/${basePath}/${slug}`.replace(/\/\/+/g, "/")
   }
+  const uuid = str => {
+    return str
+      .toLowerCase()
+      .replace(/[^a-z0-9]+/g, "-")
+      .replace(/(^-|-$)+/g, "")
+  }
   createResolvers({
     Project: {
       slug: {
         resolve: source => slugify(source.name),
       },
+      image: {
+        resolve: (source, args, context) => {
+          return context.nodeModel.runQuery({
+            query: {
+              filter: {
+                name: {
+                  eq: uuid(source.name)
+                }
+              }
+            },
+            type: "File",
+            firstOnly: true,
+          })
+        }
+      }
     },
   })
 }

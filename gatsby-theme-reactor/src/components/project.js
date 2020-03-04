@@ -1,9 +1,10 @@
 
 /** @jsx jsx */
 import { jsx, Flex, Box, Styled } from 'theme-ui'
+import { Link } from 'gatsby'
 
 const Project = ({project}) => {
-  const { name, description, technologies, start, end, url } = project
+  const { name, description, technologies, start, end, slug } = project
   return (
     <Box
       sx={{
@@ -24,7 +25,7 @@ const Project = ({project}) => {
           height: 100
         }}
       />
-      <a
+      <Link
         sx={{
           display: 'block',
           textDecoration: 'none',
@@ -32,9 +33,7 @@ const Project = ({project}) => {
             color: 'inherit'
           }
         }}
-        target="_blank"
-        rel="noopener noreferrer"
-        href={url}>
+        to={slug}>
         <Box
           sx={{
             bg: 'white',
@@ -83,8 +82,9 @@ const Project = ({project}) => {
                 sx={{
                   flexWrap: 'wrap'
                 }}>
-                { technologies.map(tech => (
+                { technologies.map((tech, i) => (
                   <div
+                    key={i}
                     sx={{
                       fontSize: '0.75rem',
                       border: 0,
@@ -101,7 +101,7 @@ const Project = ({project}) => {
             </Box>
           </Flex>
         </Box>
-      </a>
+      </Link>
     </Box>
   )
 }
