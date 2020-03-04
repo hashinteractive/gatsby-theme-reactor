@@ -85,7 +85,8 @@ const Default = () => {
                   </Styled.h6>
                   <Styled.h1
                     sx={{
-                      mt: 0
+                      mt: 0,
+                      color: 'primary'
                     }}>
                     About Me
                   </Styled.h1>
@@ -169,6 +170,7 @@ const Default = () => {
                   </Styled.h6>
                   <Styled.h1
                     sx={{
+                      color: 'primary',
                       mt: 0
                     }}>
                     What I Do
@@ -182,8 +184,9 @@ const Default = () => {
                     justifyContent: 'space-between',
                     width: 'full'
                   }}>
-                  { skills.map(skill => (
+                  { skills.map((skill, i) => (
                     <span
+                      key={i}
                       sx={{
                         mx: 1,
                         mb: 3,
@@ -212,7 +215,7 @@ const Default = () => {
               <h1
                 sx={{
                   color: theme => theme.colors.blue[8],
-                  fontSize: '85px',
+                  fontSize: ['65px', '85px'],
                   textAlign: 'right',
                   lineHeight: 1.15,
                   textShadow: '3px 3px 0 lightblue'
@@ -259,6 +262,7 @@ const Default = () => {
               </Styled.h6>
               <Styled.h1
                 sx={{
+                  color: 'primary',
                   mt: 0
                 }}>
                 Portfolio of Work

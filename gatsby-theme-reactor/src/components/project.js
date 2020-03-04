@@ -8,7 +8,7 @@ const Project = ({project}) => {
   return (
     <Box
       sx={{
-        mr: 5,
+        mr: [0, 5],
         mb: 5,
         position: 'relative',
         width: ['full', '5/12']
@@ -66,16 +66,22 @@ const Project = ({project}) => {
               </Styled.h2>
               <Styled.h6
                 sx={{
+                  my: 0,
                   color: theme => theme.colors.gray[4],
                   fontWeight: 'medium'
                 }}>
                 { start } - { end }
               </Styled.h6>
             </Box>
-            <Box>
+            <Box
+              sx={{
+                mt: 3,
+                mb: 4
+              }}>
               <p sx={{ 
+                my: 0,
                 color: theme => theme.colors.gray[6]
-              }}>{ description }</p>
+              }}>{ `${description.substring(0, 100).trim()}...` }</p>
             </Box>
             <Box>
               <Flex
@@ -94,6 +100,7 @@ const Project = ({project}) => {
                       px: 3,
                       py: 1,
                       mr: 3,
+                      mb: [2, 0],
                       bg: theme => theme.colors.gray[2] 
                     }}>{ tech }</div>
                 ))}

@@ -35,6 +35,12 @@ module.exports = ({ dataPath = 'src/data' }) => ({
         }
       }
     },
+    {
+      resolve: "gatsby-plugin-anchor-links",
+      options: {
+        offset: -50
+      }
+    },
     'gatsby-plugin-theme-ui'
   ]
 })

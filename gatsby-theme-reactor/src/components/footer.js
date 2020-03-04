@@ -37,11 +37,14 @@ const Footer = (props) => {
         p={3}>
         <Flex
           sx={{
-            alignItems: 'center'
+            flexWrap: 'wrap',
+            alignItems: 'center',
+            textAlign: ['center', 'initial']
           }}>
           <Box
             sx={{
-              width: ['full', '1/2']
+              width: ['full', '1/2'],
+              mb: [3, 0]
             }}>
             <Styled.h6
               sx={{
@@ -62,7 +65,7 @@ const Footer = (props) => {
                     sx={{
                       listStyle: 'none',
                       p: 0,
-                      justifyContent: ['flext-start', 'flex-end']
+                      justifyContent: ['center', 'flex-end']
                     }}
                     as='ul'>
                     { social.map(({ name, url }) => {

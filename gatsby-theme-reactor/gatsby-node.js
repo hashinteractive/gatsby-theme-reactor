@@ -65,6 +65,7 @@ exports.createResolvers = ({ createResolvers }) => {
         resolve: source => slugify(source.name),
       },
       image: {
+        type: "File", 
         resolve: (source, args, context) => {
           return context.nodeModel.runQuery({
             query: {
