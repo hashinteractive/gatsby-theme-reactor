@@ -1,23 +1,17 @@
 /** @jsx jsx */
 import { jsx, Container, Flex, Box, Styled } from 'theme-ui'
-import { useStaticQuery, graphql, Link } from 'gatsby'
+import { useStaticQuery, graphql } from 'gatsby'
+import { AnchorLink } from "gatsby-plugin-anchor-links"
 import Layout from '../components/layout'
 import Subnav from '../components/subnav'
+import Profile from '../components/profile'
 import Separator from '../components/separator'
 import Portfolio from '../components/portfolio'
 import Contact from '../components/contact'
 
 const Default = () => {
-  const { allFile: { edges: [{ node: { publicURL } }] }, bio: { name, description, title, skills } } = useStaticQuery(graphql`
+  const { bio: { name, description, title, skills } } = useStaticQuery(graphql`
     query {
-      allFile(filter: { name: {eq: "profile"}}) {
-        edges {
-          node {
-            publicURL
-            name
-          }
-        }
-      }
       bio {
         description
         title
@@ -44,25 +38,7 @@ const Default = () => {
               sx={{
                 width: ['full', '1/2']
               }}>
-              <div
-                sx={{
-                  bg: theme => theme.colors.blue[2],
-                  boxShadow: '2xl',
-                  borderRadius: 'lg',
-                  mb: '50px'
-                }}>
-                <img 
-                  sx={{
-                    top: ['15px', '30px'],
-                    right: ['-15px', '-35px'],
-                    boxShadow: 'lg',
-                    borderRadius: 'lg',
-                    position: 'relative',
-                    maxWidth: 'full'
-                  }}
-                  src={publicURL}
-                  alt="Profile" />
-              </div>
+              <Profile /> 
             </Box>
             <Box
               sx={{
@@ -118,7 +94,7 @@ const Default = () => {
                     />
                   </svg>
                   <span sx={{ bg: theme => theme.colors.gray[3], ml: '-14px', mr: 4, width: 10, height: '3px', display: 'inline-block', verticalAlign: 'middle' }}></span>
-                  <Link
+                  <AnchorLink
                     sx={{
                       color: 'grayDark',
                       textTransform: 'uppercase',
@@ -131,8 +107,8 @@ const Default = () => {
                       borderStyle: 'solid',
                       borderColor: theme => theme.colors.orange[3]
                     }}
-                    to="/#"
-                    replace>Get In Touch</Link> 
+                    to="/#contact"
+                    replace>Get In Touch</AnchorLink> 
                 </Box>
               </Flex>
             </Box>

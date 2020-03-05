@@ -28,5 +28,7 @@
   "skills": [
     "vue.js", "react.js", "tailwind css", "theme-ui", "gatsby.js", "nuxt.js", "graphQL", "javascript", "koa.js", "strapi.io", "firebase", "mongo", "postgres", "adobe illustrator", "adobe photoshop", "adobe xd", "sass", "postcss", "mysql", "php", "eslint", "jest", "react-native", "vue-nativescript", "mobile", "web", "SQL", "docker", "linux", "ubuntu", "bash", "python"
   ],
-  "location": "Boulder CO" 
+  "location": "Boulder CO",
+  "email": "john@example.com",
+  "phone": "(987) 654-3210" 
 }

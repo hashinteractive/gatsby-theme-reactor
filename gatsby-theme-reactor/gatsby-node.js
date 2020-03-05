@@ -40,6 +40,8 @@ exports.sourceNodes = ({ actions }) => {
       social: [Social]
       skills: [String]
       location: String
+      email: String
+      phone: String
     }
   `)
 }

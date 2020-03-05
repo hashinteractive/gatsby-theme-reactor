@@ -2,6 +2,9 @@
 import { jsx, Flex, Box, Styled } from 'theme-ui'
 import { useRef, useEffect } from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
+import Envelope from '../assets/envelope.svg'
+import Mobile from '../assets/mobile.svg'
+import Pin from '../assets/pin.svg'
 import mapboxgl from 'mapbox-gl'
 const accessToken = process.env.MAPBOX_ACCESS_TOKEN
 mapboxgl.accessToken = accessToken 
@@ -24,10 +27,12 @@ const Contact = () => {
   const map = useRef()
   //const [geoLocation, setGeoLocation] = useState('Boulder CO')
   
-  const { bio: { location = 'Boulder CO' } } = useStaticQuery(graphql`
+  const { bio: { location = 'Boulder CO', email, phone } } = useStaticQuery(graphql`
     query {
       bio {
         location
+        email
+        phone
       }
     }
   `)
@@ -76,16 +81,18 @@ const Contact = () => {
             <div
               sx={{
                display: 'flex',
+               flexDirection: 'column',
                justifyContent: 'center',
                alignItems: 'center',
                height: 500,
                width: 500,
-               maxHeight: '100vh',
-               maxWidth: '100vh',
+               maxHeight: '100vw',
+               maxWidth: '100vw',
                borderRadius: 'full',
                p: 2,
                ml: [0, '10%'],
-               mt: -75,
+               mt: [-25, -75],
+               borderStyle: 'solid',
                boxShadow: '2xl',
                backgroundColor: theme => {
                  const [ hex = '000000' ] = /[0-9a-f]{6}/i.exec(theme.colors.primary);
@@ -95,10 +102,61 @@ const Contact = () => {
                color: 'white'
               }}>
               <Styled.h2 sx={{
-                color: 'white'
+                color: 'white',
+                mb: 4
               }}>
                 Contact Me
               </Styled.h2>
+              <div>
+                { email && (
+                  <div sx={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    mb: 3
+                  }}>
+                    <Envelope sx={{
+                      width: 25,
+                      fill: 'white'
+                    }} />
+                    <span
+                      sx={{
+                        ml: 3
+                      }}>{ email }</span>
+                  </div>
+                )}
+                { phone && (
+                  <div sx={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    mb: 3
+                  }}>
+                    <Mobile sx={{
+                      width: '20px',
+                      fill: 'white'
+                    }} />
+                    <span
+                      sx={{
+                        ml: 3
+                      }}>{ phone }</span>
+                  </div>
+                )}
+                { location && (
+                  <div sx={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    mb: 3
+                  }}>
+                    <Pin sx={{
+                      width: '20px',
+                      fill: 'white'
+                    }} />
+                    <span
+                      sx={{
+                        ml: 3
+                      }}>{ location }</span>
+                  </div>
+                )}
+              </div>
             </div>
           </Box>
         </Flex>
