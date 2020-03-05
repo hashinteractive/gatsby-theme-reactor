@@ -1,5 +1,20 @@
 const fs = require('fs')
-const path = require('path')
+
+//do not import mapbox on ssr
+exports.onCreateWebpackConfig = ({ stage, loaders, actions }) => {
+  if (stage === 'build-html') {
+    actions.setWebpackConfig({
+      module: {
+        rules: [
+          {
+            test: /mapbox-gl/,
+            use: loaders.null(),
+          },
+        ],
+      },
+    })
+  }
+}
 
 // Make sure the data directory exists
 exports.onPreBootstrap = ({ reporter }, options) => {
