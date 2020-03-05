@@ -6,7 +6,7 @@ import Envelope from '../assets/envelope.svg'
 import Mobile from '../assets/mobile.svg'
 import Pin from '../assets/pin.svg'
 import mapboxgl from 'mapbox-gl'
-const accessToken = process.env.MAPBOX_ACCESS_TOKEN
+const accessToken = process.env.MAPBOX_ACCESS_TOKEN || process.env.GATSBY_MAPBOX_ACCESS_TOKEN
 mapboxgl.accessToken = accessToken 
 
 const fetchGeoLocation = async (encoded, cb) => {
@@ -25,7 +25,6 @@ const hexToRgb = (hex) => {
 
 const Contact = () => {
   const map = useRef()
-  //const [geoLocation, setGeoLocation] = useState('Boulder CO')
   
   const { bio: { location = 'Boulder CO', email, phone } } = useStaticQuery(graphql`
     query {
