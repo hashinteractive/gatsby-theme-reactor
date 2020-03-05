@@ -1,23 +1,23 @@
 [
   {
-    "name": "Hash Interactive",
-    "url": "https://hashinteractive.com",
+    "name": "Project One",
+    "url": "https://example.com",
     "technologies": ["Nuxt.js", "Bootstrap CSS", "GSAP"],
     "start": "2018-10-15",
     "end": "2020-01-15",
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
   },
   {
-    "name": "Flourish Wellness",
-    "url": "https://flourish.eco",
+    "name": "Project Two",
+    "url": "https://example.com",
     "technologies": ["Nuxt.js", "Firebase", "Bulma CSS"],
     "start": "2018-10-15",
     "end": "2020-01-15",
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
   },
   {
-    "name": "Rustic Co.",
-    "url": "https://rustic.co",
+    "name": "Project Three",
+    "url": "https://example.com",
     "technologies": ["Nuxt.js", "Strapi.io", "Tailwind CSS"],
     "start": "2018-10-15",
     "end": "2020-01-15",

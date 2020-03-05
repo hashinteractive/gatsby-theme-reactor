@@ -1,5 +1,5 @@
 {
-  "name": "gatsby-theme-reactor",
+  "name": "@hashinteractive/gatsby-theme-reactor",
   "version": "1.0.0",
   "main": "index.js",
   "author": "Troy Henne <troy@hashinteractive.com>",
