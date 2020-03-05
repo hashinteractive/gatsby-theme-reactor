@@ -27,7 +27,7 @@ const Layout = ({ children }) => (
     </main>
     <Footer
       sx={{
-        bg: 'grayDark',
+        bg: 'primary',
         color: 'white',
         width: '100%',
       }} />
