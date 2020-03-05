@@ -5,6 +5,7 @@ import Layout from '../components/layout'
 import Subnav from '../components/subnav'
 import Separator from '../components/separator'
 import Portfolio from '../components/portfolio'
+import Contact from '../components/contact'
 
 const Default = () => {
   const { allFile: { edges: [{ node: { publicURL } }] }, bio: { name, description, title, skills } } = useStaticQuery(graphql`
@@ -277,6 +278,7 @@ const Default = () => {
           </Flex>
         </Flex>
       </Container>
+      <Contact />
     </Layout>
   )
 }

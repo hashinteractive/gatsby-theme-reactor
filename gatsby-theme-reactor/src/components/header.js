@@ -115,6 +115,18 @@ const Header = (props) => {
                   to="/#portfolio"
                   replace>Portfolio</AnchorLink>
               </li>
+              <li sx={{ p: 2 }}>
+                <AnchorLink
+                  sx={{
+                    color: 'primary',
+                    textTransform: 'uppercase',
+                    fontSize: 0,
+                    fontWeight: 'extrabold',
+                    textDecoration: 'none'
+                  }}
+                  to="/#contact"
+                  replace>Contact</AnchorLink>
+              </li>
             </Flex>
           </Box>
         </Flex>
