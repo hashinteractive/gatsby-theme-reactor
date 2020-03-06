@@ -51,7 +51,7 @@ module.exports = {
 
 ![Gatsby Theme Reactor Sitename](https://raw.githubusercontent.com/hashinteractive/gatsby-theme-reactor/master/gatsby-theme-reactor/static/images/gatsby-reactor-theme-sitename.jpg)
 
-The theme has some data dependencies and sources the data for the website from JSON files in `src/data` folder. The two files which need to be created in this folder are `Bio.json` and `Project.json`. The `Bio.json` file contains all of the information about __you the developer/designer__ and looks like:
+The theme has some data dependencies and sources the data for the website from JSON files in `/src/data` folder (ie. `my-portfolio/src/data`). The two files which need to be created in this folder are `Bio.json` and `Project.json`. The `Bio.json` file contains all of the information about __you the developer/designer__ and looks like:
 ```
 {
   "name": "Mark Twain",
@@ -88,7 +88,7 @@ The theme has some data dependencies and sources the data for the website from J
   "phone": "(987) 654-3210" 
 }
 ```
-Most of the fields in this file are self explanatory but you can fill in your required information.  The `Project.json` file contains information about projects you've worked on which represent your portfolio/work. There will be a page on your website created for each of your projects located at: `/project/my-project-name` and the `Project.json` field will look like:
+Most of the fields in this file are self explanatory but you can fill in your required information.  The `Project.json` file contains information about projects you've worked on which represent your portfolio/work. There will be a page on your website created for each of your projects located at: `www.domain.com/project/my-project-name` and the `Project.json` file should look like:
 ```
 [
   {
@@ -119,7 +119,7 @@ Most of the fields in this file are self explanatory but you can fill in your re
 ```
 You can find and example of the `Bio.json` file in this project repository here: [github.com/hashinteractive/gatsby-theme-reactor](https://github.com/hashinteractive/gatsby-theme-reactor/tree/master/gatsby-theme-reactor/src/data)
 
-Project images can be created in your `src/data/images` directory and will need need to be "slugified" versions of the project name. For example, if you have a project named: "My Special Project" you can add an image for the project to `src/data/images` named `my-special-project.jpg` or `my-special-project.png` and the Reactor theme will resolve to find the image and attach it to the project to be displayed on the project's individual page. The recommended aspect ratio for images would be 1:2 (ie. 500px wide by 1000px height) as they are meant to be "mobile screenshots" of the project work:
+Project images can be created in your `/src/data/images` directory and will need need to be "slugified" versions of the project name. For example, if you have a project named: "My Special Project" you can add an image for the project to `/src/data/images` named `my-special-project.jpg` __or__ `my-special-project.png` (supported files are `.jpg`, `.png`, `.gif` files) and the __Gatsby Reactor Theme__ will resolve to find the image and attach it to the project to be displayed on the project's individual page. The recommended aspect ratio for images is 1:2 (ie. 500px wide by 1000px height) as they are meant to be "mobile screenshots" of the project work:
 ![Gatsby Theme Reactor Individual Project](https://raw.githubusercontent.com/hashinteractive/gatsby-theme-reactor/master/gatsby-theme-reactor/static/images/gatsby-reactor-theme-individual-project.jpg)
 
 ### Adding Custom Favicon
@@ -165,3 +165,7 @@ For production builds `yarn run build` you will either need a `.env.production` 
 
 # Deployment
 It is recommended you deploy your Gatsby site using a Static Site Hosting Platform such as Netlify, Surge, Zeit, Heroku or any of the other available deployment platforms. You can find many articles on deploying for Gatsby in the [Gatsby Deploying and Hosting Docs](https://www.gatsbyjs.org/docs/deploying-and-hosting/)
+
+
+______
+__Credits__ The Gatsby Reactor Theme is creatively designed and developed by the team at [Hash Interactive](https://hashinteractive.com)
