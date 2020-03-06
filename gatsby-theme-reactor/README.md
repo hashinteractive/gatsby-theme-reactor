@@ -2,7 +2,7 @@
 
 The Reactor Theme is a theme for Gatsby JS sites. [Gatsby themes](https://www.gatsbyjs.org/docs/themes/what-are-gatsby-themes/) are plugins (npm packages) that add pre-configured functionality and UI to a basic Gatsby sites. This theme is a portfolio theme for software engineers, developers and UI designers to use as a personal *Curriculum Vitae*. It is open source with MIT license and can be used for both personal and commercial use.
 
-![Gatsby Theme Reactor Sitename](https://github.com/hashinteractive/gatsby-theme-reactor/tree/master/gatsby-theme-reactor/static/images/gatsby-reactor-theme.jpg)
+![Gatsby Theme Reactor Sitename](https://raw.githubusercontent.com/hashinteractive/gatsby-theme-reactor/master/gatsby-theme-reactor/static/images/gatsby-reactor-theme-sitename.jpg)
 
 ### Theme Requirements & Setup
 
