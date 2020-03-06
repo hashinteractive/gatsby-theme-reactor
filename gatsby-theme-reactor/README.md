@@ -2,6 +2,8 @@
 
 The Reactor Theme is a theme for Gatsby JS sites. [Gatsby themes](https://www.gatsbyjs.org/docs/themes/what-are-gatsby-themes/) are plugins (npm packages) that add pre-configured functionality and UI to a basic Gatsby sites. This theme is a portfolio theme for software engineers, developers and UI designers to use as a personal *Curriculum Vitae*. It is open source with MIT license and can be used for both personal and commercial use.
 
+View the [Demo Site Here](https://reactor-theme.netlify.com/)
+
 ![Gatsby Theme Reactor](https://raw.githubusercontent.com/hashinteractive/gatsby-theme-reactor/master/gatsby-theme-reactor/static/images/gatsby-reactor-theme.jpg)
 
 ### Theme Requirements & Setup
@@ -128,10 +130,10 @@ The theme resolves the path of the favicon to `/images/favicon.ico` and favicon 
   <link rel="icon" type="image/png" sizes="32x32" href={'/images/favicon-32x32.png'} />
   <link rel="apple-touch-icon" sizes="180x180" href={'/images/apple-touch-icon.png'} />
 ```
-If you would like to use the favicon that is displayed in the site example you can find the [favicon files here](https://github.com/hashinteractive/gatsby-theme-reactor/tree/master/gatsby-theme-reactor/static/images) to place in your `static/images/` directory and they will be copied over at build time to resolve to `/images/favicon.ico` or `/images/favicon-16x16.png` 
+If you would like to use the favicon that is displayed in the site example you can find the [favicon files here](https://github.com/hashinteractive/gatsby-theme-reactor/tree/master/gatsby-theme-reactor/static/images) to place in your `/static/images/` directory and they will be copied over at build time to resolve to `/images/favicon.ico` or `/images/favicon-16x16.png` respectively.
 
 # Theme Customizations
-This theme utilizes [gatsby-plugin-theme-ui](https://theme-ui.com/packages/gatsby-plugin/) with a strong dependency on the [Tailwind CSS Preset](https://theme-ui.com/presets/tailwind). The preset configuration can be overriden (for example to set the theme's primary color) by creating an `index.js` file located at `src/gatsby-plugin-theme-ui/index.js` which would look like:
+This theme utilizes [gatsby-plugin-theme-ui](https://theme-ui.com/packages/gatsby-plugin/) with a strong dependency on the [Tailwind CSS Preset](https://theme-ui.com/presets/tailwind). The preset configuration can be overriden (for example to set the theme's primary color) by creating an `index.js` file located at `/src/gatsby-plugin-theme-ui/index.js` which would look like:
 ```
 import { tailwind } from '@theme-ui/presets'
 
@@ -151,15 +153,15 @@ export default {
   }
 }
 ```
-As you can see in the example above we are setting the theme's `primary` color to tailwind's `colors.blue[9]` and we are also setting the header font to be `'Titillium'` webfont which we have included by using the [gatsby-plugin-web-font-loader](https://www.gatsbyjs.org/packages/gatsby-plugin-web-font-loader/). If you decide to change the heading font for the theme you will need to define the `@font-face` with the definitions to the font files in your project or use the plugin mentioned above __gatsby-plugin-web-font-loader__ to include the required font.
+As you can see in the example above we are setting the theme's `primary` color to tailwind's `tailwind.colors.blue[9]` and we are also setting the header font to be `'Titillium'` webfont which we have included by using the [gatsby-plugin-web-font-loader](https://www.gatsbyjs.org/packages/gatsby-plugin-web-font-loader/). If you decide to change the heading font for the theme you will need to define the `@font-face` with the definitions to the font files in your project or use the plugin mentioned above __gatsby-plugin-web-font-loader__ to include the required font.
 
 # Mapbox Integration for Contact Section
 ![Gatsby Theme Reactor Mapbox](https://raw.githubusercontent.com/hashinteractive/gatsby-theme-reactor/master/gatsby-theme-reactor/static/images/gatsby-reactor-theme-mapbox.jpg)
-The theme relies on the Open Source mappign platform [Mapbox](https://www.mapbox.com/) and thus requires and `environment` variable to be be set that is called `MAPBOX_ACCESS_TOKEN`. For development build `yarn run develop` you will need to create an `.env.development` file in the root of your project with the definition for your Mapbox Access Token:
+The theme relies on the Open Source mapping platform [Mapbox](https://www.mapbox.com/) and thus requires an `environment` variable to be be set that is called `MAPBOX_ACCESS_TOKEN`. For development build `yarn run develop` you will need to create a `.env.development` file in the root of your project with the definition for your Mapbox Access Token:
 ```
 MAPBOX_ACCESS_TOKEN=<Your Access Token>
 ```
-For production builds `yarn run build` you will either need a `.env.production` file with the same `MAPBOX_ACCESS_TOKEN` definition or if you are deploying to a __Static Site Hosting Platform__ such as [Netlify](https://www.netlify.com) you will need to define the environment variable using the services' recommended environment variable injection methods but __You will need to prefix the env varible__ with `GATSBY_` such that it is `GATSBY_MAPBOX_ACCESS_TOKEN` and gatsby will make the `process.env` variable available to the [Client-side Javascript](https://www.gatsbyjs.org/docs/environment-variables/#client-side-javascript) for Mapbox purposes.
+For production builds `yarn run build` you will either need a `.env.production` file with the same `MAPBOX_ACCESS_TOKEN` definition or if you are deploying to a __Static Site Hosting Platform__ such as [Netlify](https://www.netlify.com) you will need to define the environment variable using the services' recommended environment variable injection methods but __You will need to prefix the env varible__ with `GATSBY_` such that it is `GATSBY_MAPBOX_ACCESS_TOKEN` and gatsby will make the `process.env.GATSBY_MAPBOX_ACCESS_TOKEN` variable available to the [Client-side Javascript](https://www.gatsbyjs.org/docs/environment-variables/#client-side-javascript) for Mapbox purposes.
 
 # Deployment
 It is recommended you deploy your Gatsby site using a Static Site Hosting Platform such as Netlify, Surge, Zeit, Heroku or any of the other available deployment platforms. You can find many articles on deploying for Gatsby in the [Gatsby Deploying and Hosting Docs](https://www.gatsbyjs.org/docs/deploying-and-hosting/)
