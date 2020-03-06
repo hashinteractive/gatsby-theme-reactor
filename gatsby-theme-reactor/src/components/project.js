@@ -101,6 +101,7 @@ const Project = ({project}) => {
                       py: 1,
                       mr: 3,
                       mb: [2, 0],
+                      color: 'grayDark',
                       bg: theme => theme.colors.gray[2] 
                     }}>{ tech }</div>
                 ))}
