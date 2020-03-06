@@ -4,7 +4,7 @@ The Reactor Theme is a theme for Gatsby JS sites. [Gatsby themes](https://www.ga
 
 View the [Demo Site Here](https://reactor-theme.netlify.com/)
 
-![Gatsby Theme Reactor](https://raw.githubusercontent.com/hashinteractive/gatsby-theme-reactor/master/gatsby-theme-reactor/static/images/gatsby-reactor-theme.jpg)
+![Gatsby Theme Reactor](https://raw.githubusercontent.com/hashinteractive/gatsby-theme-reactor/master/example/static/images/gatsby-reactor-theme.jpg)
 
 ### Theme Requirements & Setup
 
@@ -49,7 +49,7 @@ module.exports = {
 }
 ```
 
-![Gatsby Theme Reactor Sitename](https://raw.githubusercontent.com/hashinteractive/gatsby-theme-reactor/master/gatsby-theme-reactor/static/images/gatsby-reactor-theme-sitename.jpg)
+![Gatsby Theme Reactor Sitename](https://raw.githubusercontent.com/hashinteractive/gatsby-theme-reactor/master/example/static/images/gatsby-reactor-theme-sitename.jpg)
 
 The theme has some data dependencies and sources the data for the website from JSON files in `/src/data` folder (ie. `my-portfolio/src/data`). The two files which need to be created in this folder are `Bio.json` and `Project.json`. The `Bio.json` file contains all of the information about __you the developer/designer__ and looks like:
 ```
@@ -88,7 +88,10 @@ The theme has some data dependencies and sources the data for the website from J
   "phone": "(987) 654-3210" 
 }
 ```
-Most of the fields in this file are self explanatory but you can fill in your required information.  The `Project.json` file contains information about projects you've worked on which represent your portfolio/work. There will be a page on your website created for each of your projects located at: `www.domain.com/project/my-project-name` and the `Project.json` file should look like:
+Most of the fields in this file are self explanatory but you can fill in your required information. __Your Profile Picture__ will need to be uploaded to the folder `/src/data/images` and be named `profile.jpg` and `profile-alt.jpg` respectively in order to allow for the hover affect of the profile image:
+![Gatsby Theme Reactor Profile](https://raw.githubusercontent.com/hashinteractive/gatsby-theme-reactor/master/example/static/images/profile-hover.gif)
+
+The `Project.json` file contains information about projects you've worked on which represent your portfolio/work. There will be a page on your website created for each of your projects located at: `www.domain.com/project/my-project-name` and the `Project.json` file should look like:
 ```
 [
   {
@@ -120,7 +123,7 @@ Most of the fields in this file are self explanatory but you can fill in your re
 You can find and example of the `Bio.json` file and `Project.json` file in this project's repository here: [github.com/hashinteractive/gatsby-theme-reactor](https://github.com/hashinteractive/gatsby-theme-reactor/tree/master/gatsby-theme-reactor/src/data)
 
 Project images can be created in your `/src/data/images` directory and will need need to be "slugified" versions of the project name. For example, if you have a project named: "My Special Project" you can add an image for the project to `/src/data/images` named `my-special-project.jpg` __or__ `my-special-project.png` (supported files are `.jpg`, `.png`, `.gif` files) and the __Gatsby Reactor Theme__ will resolve to find the image and attach it to the project to be displayed on the project's individual page. The recommended aspect ratio for images is 1:2 (ie. 500px wide by 1000px height) as they are meant to be "mobile screenshots" of the project work:
-![Gatsby Theme Reactor Individual Project](https://raw.githubusercontent.com/hashinteractive/gatsby-theme-reactor/master/gatsby-theme-reactor/static/images/gatsby-reactor-theme-individual-project.jpg)
+![Gatsby Theme Reactor Individual Project](https://raw.githubusercontent.com/hashinteractive/gatsby-theme-reactor/master/example/static/images/gatsby-reactor-theme-individual-project.jpg)
 
 ### Adding Custom Favicon
 The theme resolves the path of the favicon to `/images/favicon.ico` and favicon size variations 16x16, 32x32 as well as apple-touch-icon 180x180. At a minimum you can create a custom `favicon.ico` and place it in `/static/images/` directory which will need to be created in your project's root:
@@ -156,7 +159,7 @@ export default {
 As you can see in the example above we are setting the theme's `primary` color to tailwind's `tailwind.colors.blue[9]` and we are also setting the header font to be `'Titillium'` webfont which we have included by using the [gatsby-plugin-web-font-loader](https://www.gatsbyjs.org/packages/gatsby-plugin-web-font-loader/). If you decide to change the heading font for the theme you will need to define the `@font-face` with the definitions to the font files in your project or use the plugin mentioned above __gatsby-plugin-web-font-loader__ to include the required font.
 
 # Mapbox Integration for Contact Section
-![Gatsby Theme Reactor Mapbox](https://raw.githubusercontent.com/hashinteractive/gatsby-theme-reactor/master/gatsby-theme-reactor/static/images/gatsby-reactor-theme-mapbox.jpg)
+![Gatsby Theme Reactor Mapbox](https://raw.githubusercontent.com/hashinteractive/gatsby-theme-reactor/master/example/static/images/gatsby-reactor-theme-mapbox.jpg)
 The theme relies on the Open Source mapping platform [Mapbox](https://www.mapbox.com/) and thus requires an `environment` variable to be be set that is called `MAPBOX_ACCESS_TOKEN`. For development build `yarn run develop` you will need to create a `.env.development` file in the root of your project with the definition for your Mapbox Access Token:
 ```
 MAPBOX_ACCESS_TOKEN=<Your Access Token>
