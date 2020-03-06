@@ -2,7 +2,7 @@
 
 The Reactor Theme is a theme for Gatsby JS sites. [Gatsby themes](https://www.gatsbyjs.org/docs/themes/what-are-gatsby-themes/) are plugins (npm packages) that add pre-configured functionality and UI to a basic Gatsby sites. This theme is a portfolio theme for software engineers, developers and UI designers to use as a personal *Curriculum Vitae*. It is open source with MIT license and can be used for both personal and commercial use.
 
-![Gatsby Theme Reactor Sitename](https://raw.githubusercontent.com/hashinteractive/gatsby-theme-reactor/master/gatsby-theme-reactor/static/images/gatsby-reactor-theme-sitename.jpg)
+![Gatsby Theme Reactor](https://raw.githubusercontent.com/hashinteractive/gatsby-theme-reactor/master/gatsby-theme-reactor/static/images/gatsby-reactor-theme.jpg)
 
 ### Theme Requirements & Setup
 
@@ -47,7 +47,7 @@ module.exports = {
 }
 ```
 
-![Gatsby Theme Reactor Sitename](https://github.com/hashinteractive/gatsby-theme-reactor/tree/master/gatsby-theme-reactor/static/images/gatsby-reactor-theme-sitename.jpg)
+![Gatsby Theme Reactor Sitename](https://raw.githubusercontent.com/hashinteractive/gatsby-theme-reactor/master/gatsby-theme-reactor/static/images/gatsby-reactor-theme-sitename.jpg)
 
 The theme has some data dependencies and sources the data for the website from JSON files in `src/data` folder. The two files the need to be created in this folder are `Bio.json` and `Project.json`. The `Bio.json` file contains all of the information about __you the developer/designer__ and looks like:
 ```
