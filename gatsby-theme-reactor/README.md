@@ -117,7 +117,7 @@ Most of the fields in this file are self explanatory but you can fill in your re
   }
 ]
 ```
-You can find and example of the `Bio.json` file in this project repository here: [github.com/hashinteractive/gatsby-theme-reactor](https://github.com/hashinteractive/gatsby-theme-reactor/tree/master/gatsby-theme-reactor/src/data)
+You can find and example of the `Bio.json` file and `Project.json` file in this project's repository here: [github.com/hashinteractive/gatsby-theme-reactor](https://github.com/hashinteractive/gatsby-theme-reactor/tree/master/gatsby-theme-reactor/src/data)
 
 Project images can be created in your `/src/data/images` directory and will need need to be "slugified" versions of the project name. For example, if you have a project named: "My Special Project" you can add an image for the project to `/src/data/images` named `my-special-project.jpg` __or__ `my-special-project.png` (supported files are `.jpg`, `.png`, `.gif` files) and the __Gatsby Reactor Theme__ will resolve to find the image and attach it to the project to be displayed on the project's individual page. The recommended aspect ratio for images is 1:2 (ie. 500px wide by 1000px height) as they are meant to be "mobile screenshots" of the project work:
 ![Gatsby Theme Reactor Individual Project](https://raw.githubusercontent.com/hashinteractive/gatsby-theme-reactor/master/gatsby-theme-reactor/static/images/gatsby-reactor-theme-individual-project.jpg)
