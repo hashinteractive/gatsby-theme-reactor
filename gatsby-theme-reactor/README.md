@@ -36,7 +36,6 @@ The Gatsby Reactor Theme requires a few files that you will need to define __bef
 - [Bio.json](#bio-json) located at `/src/data/Bio.json` 
 - [Project.json](#project-json) located at `/src/data/Project.json` 
 - [profile.jpg](#profile) and [profile-alt.jpg](#profile) located at `/src/data/images/profile.jpg` and `/src/data/images/profile-alt.jpg`
-> You can find and example of the `Bio.json` file and `Project.json` file in this project's repository here: [github.com/hashinteractive/gatsby-theme-reactor/src/data](https://github.com/hashinteractive/gatsby-theme-reactor/tree/master/gatsby-theme-reactor/src/data)
 
 ## Gatsby Config
 You will need to create a file in the root of your project called `gatsby-config.js` and define the `@hashinteractive/gatsby-theme-reactor` as a plugin dependency:
@@ -126,6 +125,8 @@ The `Project.json` file (located in `/src/data/Project.json` folder) contains in
   }
 ]
 ```
+> You can find and example of the `Bio.json` file and `Project.json` file in this project's repository here: [github.com/hashinteractive/gatsby-theme-reactor/src/data](https://github.com/hashinteractive/gatsby-theme-reactor/tree/master/gatsby-theme-reactor/src/data)  
+
 ### Project Images
 Project images can be created in your `/src/data/images` directory and will need need to be "slugified" versions of the project name. For example, if you have a project named: "My Special Project" you can add an image for the project to `/src/data/images` named `my-special-project.jpg` __or__ `my-special-project.png` (supported files are `.jpg`, `.png`, `.gif` files) and the __Gatsby Reactor Theme__ will resolve to find the image and attach it to the project to be displayed on the project's individual page. The recommended aspect ratio for images is 1:2 (ie. 500px wide by 1000px height) as they are meant to be "mobile screenshots" of the project work.  
 [Demo of an individual projct page](https://reactor-theme.netlify.com/project/reactor-theme)
