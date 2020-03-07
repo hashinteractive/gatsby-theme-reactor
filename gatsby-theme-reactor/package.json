@@ -1,6 +1,6 @@
 {
   "name": "@hashinteractive/gatsby-theme-reactor",
-  "version": "1.0.4",
+  "version": "1.0.6",
   "main": "index.js",
   "author": "Troy Henne <troy@hashinteractive.com>",
   "license": "MIT",
