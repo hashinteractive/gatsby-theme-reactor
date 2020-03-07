@@ -57,7 +57,7 @@ module.exports = {
 
 
 ## Bio Json
-The theme has some data dependencies and sources the data for the website from JSON files located in `/src/data/Bio.json` folder (ie. `my-portfolio/src/data/Bio.json`).  The `Bio.json` file contains all of the information about __you the developer/designer__ and looks like:
+The theme has some data dependencies and sources the data for the website from JSON files located in `/src/data/` folder (ie. `my-portfolio/src/data/Bio.json`).  The `Bio.json` file contains all of the information about __you the developer/designer__ and looks like:
 ```
 {
   "name": "Mark Twain",
@@ -132,7 +132,7 @@ Project images can be created in your `/src/data/images` directory and will need
 > If you add "slugified" project images after you have run the `yarn run develop` or `yarn run build` command and they are not showing up on the individual project page you may need to run `yarn run clean` to clean the Gatsby cache. 
 
 ## Profile
-The two images `profile.jpg` and `profile-alt.jpg` __are required__ and will need to be uploaded to the folder `/src/data/images` and __need to be named__ `profile.jpg` and `profile-alt.jpg` respectively in order to allow for the hover affect of the profile image:
+The two images `profile.jpg` and `profile-alt.jpg` __are required__ and will need to be uploaded to the folder `/src/data/images` and __need to be named__ `profile.jpg` and `profile-alt.jpg` respectively in order to allow for the hover affect of the profile image:  
 ![Gatsby Theme Reactor Profile](https://raw.githubusercontent.com/hashinteractive/gatsby-theme-reactor/master/example/static/images/profile-hover.gif)  
   
 # Theme Customizations
